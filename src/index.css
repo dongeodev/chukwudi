@@ -1,3 +1,21 @@
+:root {
+  --primary: #5539a3;
+  --secondary: #ffd543;
+  --accent: #ff6123;
+  --background: #fff7eb;
+  --gray1: #f8f8f8;
+  --gray2: #c0c0c0;
+  --gray3: #575757;
+  --black: #000;
+  --white: #fff;
+
+  --spacing-none: 0;
+  --spacing-small: 8px;
+  --spacing-medium: 16px;
+  --spacing-large: 24px;
+  --spacing-xlarge: 32px;
+}
+
 *,
 *:before,
 *:after {
@@ -13,6 +31,7 @@ h1,
 h2,
 h3,
 p,
+figure,
 button {
   margin: 0;
   padding: 0;
@@ -35,6 +54,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   width: 100vw;
   height: 100vh;
+  background-color: var(--gray1);
 }
 
 code {

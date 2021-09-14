@@ -1,0 +1,31 @@
+.category {
+  text-align: center;
+  height: 110px;
+  width: 60px;
+  border-radius: 35px;
+  padding: 5px;
+  background-color: var(--white);
+  cursor: pointer;
+}
+.category__container-img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  border: 1px solid var(--gray1);
+  border-radius: 50%;
+  background-color: var(--white);
+  margin-bottom: var(--spacing-small);
+}
+.category__img {
+  width: 20px;
+  height: 20px;
+}
+.category__name {
+  font-size: 1.2rem;
+}
+
+.category.selected {
+  background-color: var(--secondary);
+}
