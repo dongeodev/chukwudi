@@ -4,7 +4,7 @@ import { colors, spacing } from "styles"
 export const ButtonTransparent = styled.button`
   display: flex;
   align-items: center;
-  height: 48px;
+  height: ${(props) => props.height || "48px"};
   width: 100%;
   max-width: ${(props) => props.width || "100%"};
   background-color: transparent;
