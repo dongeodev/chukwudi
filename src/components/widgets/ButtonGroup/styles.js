@@ -6,11 +6,14 @@ export const Container = styled.div`
   overflow: hidden;
   border-radius: ${border.small};
   border: 1px solid ${colors.gray2};
+  width: fit-content;
 `
 
 export const Button = styled.button`
+  width: 20px;
+  height: 20px;
   color: ${colors.black};
-  font-size: ${fontSize.xSmall};
+  font-size: ${fontSize.medium};
 `
 export const Input = styled.input`
   width: 20px;
@@ -18,6 +21,7 @@ export const Input = styled.input`
   outline: none;
   border: none;
   font-size: ${fontSize.small};
+  padding-left: 5px;
   &:focus {
     outline: none;
     border: none;

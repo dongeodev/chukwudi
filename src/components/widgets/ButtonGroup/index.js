@@ -1,13 +1,14 @@
-import React from "react"
-import { Button, Input } from "./styles"
+import React, { useState } from "react"
+import { Button, Container, Input } from "./styles"
 
 function ButtonGroup() {
+  const [count, setCount] = useState(1)
   return (
-    <div>
-      <Button>-</Button>
-      <Input />
-      <Button>+</Button>
-    </div>
+    <Container>
+      <Button onClick={() => setCount((prev) => prev - 1)}>-</Button>
+      <Input value={count} />
+      <Button onClick={() => setCount((prev) => prev + 1)}>+</Button>
+    </Container>
   )
 }
 

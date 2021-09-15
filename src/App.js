@@ -6,6 +6,9 @@ import CardAddress from "components/CardAddress"
 import Title from "components/Title"
 import ItemCartDelivery from "components/ItemCartDelivery"
 import Dropdown from "components/Dropdown"
+import ButtonGroup from "components/widgets/ButtonGroup"
+import ButtonCheckout from "components/widgets/ButtonCheckout"
+import InputSearch from "components/widgets/InputSearch"
 
 function App() {
   return (
@@ -14,7 +17,11 @@ function App() {
       <br />
       <Category />
       <br />
-      <Card />
+      <ButtonGroup />
+      <br />
+      <InputSearch />
+      <br />
+      <ButtonCheckout text="Checkout" width="150px" />
       <br />
       <Dropdown />
       <br />
