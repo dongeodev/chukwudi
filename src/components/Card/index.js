@@ -18,7 +18,7 @@ function Card({
   id,
   addProduct,
 }) {
-  const [isHover, setIsHover] = useState(false)
+  // const [isHover, setIsHover] = useState(false)
   const [disabled, setDisabled] = useState(false)
   const handleAdd = () => {
     setDisabled(true)
@@ -27,8 +27,8 @@ function Card({
 
   return (
     <Article
-      onMouseEnter={() => setIsHover(true)}
-      onMouseLeave={() => setIsHover(false)}
+    // onMouseEnter={() => setIsHover(true)}
+    // onMouseLeave={() => setIsHover(false)}
     >
       <ContainerImage url={image}>
         <Time>{time}</Time>
@@ -43,16 +43,14 @@ function Card({
           <Span>Bagels</Span>
           <Span>{price}$</Span>
         </Info>
-        {isHover && (
-          <Button
-            width="fit-content"
-            height="fit-content"
-            onClick={handleAdd}
-            disabled={disabled}
-          >
-            {disabled ? "Added" : "Add to cart"}
-          </Button>
-        )}
+        <Button
+          width="fit-content"
+          height="fit-content"
+          onClick={handleAdd}
+          disabled={disabled}
+        >
+          {disabled ? "Added" : "Add to cart"}
+        </Button>
       </ContainerDescription>
     </Article>
   )

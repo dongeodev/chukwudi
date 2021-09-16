@@ -2,7 +2,7 @@ import styled, { css } from "styled-components"
 import { border, breakpoints, colors, fontSize, spacing } from "styles"
 
 export const Section = styled.section`
-  width: auto;
+  min-width: 300px;
   height: 100%;
   padding: 38px 0 38px 24px;
   background-color: ${colors.gray2}35;
@@ -62,6 +62,7 @@ export const H2 = styled.h2`
 export const ProductsContainer = styled.div`
   margin-top: 60px;
   padding-right: 24px;
+  min-height: 250px;
   & article {
     margin-bottom: ${spacing.large};
   }
