@@ -23,18 +23,20 @@ export const Select = styled.div`
 `
 export const ContainerOptions = styled.div`
   position: absolute;
-  top: 50px;
-  left: 10px;
+  top: 42px;
+  left: 0px;
   width: fit-content;
+  height: fit-content;
   border-radius: ${border.medium};
   border: 1px solid ${colors.gray2};
   overflow: hidden;
+  z-index: 2;
 `
 export const Option = styled.div`
   display: flex;
   align-items: center;
-  height: 48px;
-  width: 200px;
+  height: 42px;
+  width: 220px;
   padding: 0 16px;
   cursor: pointer;
   color: ${colors.black};

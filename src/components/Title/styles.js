@@ -3,6 +3,7 @@ import { fontSize, spacing } from "styles"
 
 export const Container = styled.div`
   display: flex;
+  margin-bottom: ${spacing.medium};
 `
 export const H2 = styled.h2`
   font-size: ${fontSize.big};

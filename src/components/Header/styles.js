@@ -46,6 +46,9 @@ export const ContainerText = styled.div`
     font-size: ${fontSize.small};
     color: ${colors.gray2};
   }
+  @media (max-width: ${breakpoints["desktop-small"]}px) {
+    margin-left: 300px;
+  }
   @media (max-width: ${breakpoints["tablet-large"]}px) {
     margin-left: 260px;
   }

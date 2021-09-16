@@ -6,7 +6,7 @@ export const Article = styled.article`
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  max-width: 250px;
+  max-width: 280px;
   border-radius: ${border.small};
 `
 export const Container = styled.div`

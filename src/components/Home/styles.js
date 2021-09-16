@@ -1,6 +1,30 @@
 import styled from "styled-components"
-import { breakpoints, fontSize, spacing } from "styles"
+import { breakpoints, colors, fontSize, spacing } from "styles"
 
+export const HomeContainer = styled.div`
+  position: relative;
+  display: grid;
+  width: 100%;
+  height: 100%;
+  grid-template-columns: minmax(320px, 3.5fr) 1fr;
+  @media (max-width: ${breakpoints["desktop-small"]}px) {
+    grid-template-columns: minmax(320px, 3.5fr) 1.5fr;
+  }
+  @media (max-width: ${breakpoints["tablet-medium"]}px) {
+    grid-template-columns: 1fr;
+  }
+`
+export const Main = styled.main`
+  height: 100%;
+  /* max-width: 1105px; */
+  /* margin: 0 auto; */
+  padding: 38px;
+  background-color: ${colors.gray1};
+  @media (max-width: ${breakpoints["tablet-medium"]}px) {
+    width: 100vw;
+    padding: ${spacing.medium};
+  }
+`
 export const Container = styled.div`
   display: flex;
   width: 100%;
@@ -11,14 +35,14 @@ export const Container = styled.div`
     margin-right: ${spacing.xlarge};
     margin-left: ${spacing.medium};
   }
-`
-export const Main = styled.main`
-  width: 100%;
-  height: 100%;
-  /* max-width: 1105px; */
-  /* margin: 0 auto; */
-  padding: 38px;
-  background-color: lightblue;
+  & Button {
+    margin-left: ${spacing.medium};
+    display: none;
+    cursor: pointer;
+    @media (max-width: ${breakpoints["tablet-medium"]}px) {
+      display: block;
+    }
+  }
 `
 export const ContainerTitle = styled.div`
   display: flex;
@@ -29,9 +53,6 @@ export const ContainerTitle = styled.div`
   margin-top: ${spacing.xlarge};
   @media (max-width: ${breakpoints["mobile-medium"]}px) {
     flex-direction: column;
-    & div:nth-child(1) {
-      margin-bottom: ${spacing.medium};
-    }
   }
 `
 export const ContainerCategories = styled.section`
@@ -50,21 +71,22 @@ export const ContainerCategories = styled.section`
   }
 `
 export const ContainerProducts = styled.section`
-  display: grid;
-  grid-template-columns: repeat(5, auto);
-
-  gap: ${spacing.xlarge};
-
+  display: flex;
+  flex-wrap: wrap;
+  /* max-width: 100%; */
   margin-bottom: ${spacing.xlarge};
-  padding-bottom: ${spacing.medium};
-  @media (max-width: ${breakpoints["desktop-medium"]}px) {
-    grid-template-columns: repeat(4, auto);
+  /* padding-bottom: ${spacing.medium}; */
+  & article {
+    margin-right: ${spacing.medium};
+  }
+  & article:nth-child(-1) {
+    margin-right: ${spacing.none};
+  }
+  @media (max-width: ${breakpoints["desktop-small"]}px) {
+    flex-wrap: nowrap;
     overflow-x: auto;
   }
-  @media (max-width: ${breakpoints["tablet-large"]}px) {
-    grid-template-columns: repeat(3, auto);
-  }
   @media (max-width: ${breakpoints["tablet-medium"]}px) {
-    grid-auto-flow: column;
+    max-width: 700px;
   }
 `

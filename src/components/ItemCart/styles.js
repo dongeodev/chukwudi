@@ -4,6 +4,12 @@ import { border, colors, fontSize, spacing } from "styles"
 export const Article = styled.article`
   display: flex;
   align-items: center;
+  justify-content: space-between;
+  max-width: 280px;
+`
+export const Container = styled.div`
+  display: flex;
+  align-items: center;
 `
 export const Figure = styled.div`
   margin-right: ${spacing.small};

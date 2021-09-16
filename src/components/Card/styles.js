@@ -3,7 +3,9 @@ import { border, colors, fontSize, spacing } from "styles"
 
 export const Article = styled.article`
   width: 250px;
-  height: 230px;
+  min-width: 250px;
+  height: 240px;
+  margin-bottom: ${spacing.medium};
   /* background-color: ${colors.white}; */
   overflow: hidden;
 `
@@ -30,8 +32,11 @@ export const ContainerDescription = styled.div`
   margin-top: ${spacing.medium};
 
   & h2 {
+    height: 22px;
+    font-size: ${fontSize.medium};
     font-weight: 500;
     margin-bottom: ${spacing.small};
+    overflow-y: auto;
   }
 `
 export const Info = styled.div`
