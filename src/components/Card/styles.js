@@ -1,3 +1,4 @@
+import { ButtonTransparent } from "components/styleComponents/styleButtonTransparent"
 import styled from "styled-components"
 import { border, colors, fontSize, spacing } from "styles"
 
@@ -65,4 +66,12 @@ export const Info = styled.div`
 `
 export const Span = styled.span`
   color: ${colors.gray2};
+`
+export const Button = styled(ButtonTransparent)`
+  color: ${colors.primary};
+  margin-top: ${spacing.small};
+  &:disabled {
+    color: ${colors.gray2};
+    cursor: not-allowed;
+  }
 `

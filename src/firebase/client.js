@@ -2,6 +2,7 @@
 import firebase from "firebase/compat/app"
 import "firebase/compat/auth"
 import "firebase/compat/firestore"
+import "firebase/compat/storage"
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
   apiKey: "AIzaSyDGpHEx8ovE3byuk5kjt8MnMmXt-pmvGDs",
@@ -15,6 +16,8 @@ const firebaseConfig = {
 
 !firebase.apps.length && firebase.initializeApp(firebaseConfig)
 const db = firebase.firestore()
+const storage = firebase.storage()
+const storageRef = storage.ref()
 
 const mapUserFromFirebaseAuthToUser = (user) => {
   const { displayName, email, photoURL, uid } = user
@@ -68,4 +71,27 @@ export const fetchLatestReviews = () => {
         }
       })
     })
+}
+
+export const getCategories = () => {
+  return storageRef
+    .child("categories.json")
+    .getDownloadURL()
+    .then(async function (url) {
+      const data = await fetch(url)
+      const categories = data.json()
+      return categories
+    })
+    .catch((e) => console.log(e))
+}
+export const getProducts = () => {
+  return storageRef
+    .child("products.json")
+    .getDownloadURL()
+    .then(async function (url) {
+      const data = await fetch(url)
+      const categories = data.json()
+      return categories
+    })
+    .catch((e) => console.log(e))
 }

@@ -13,13 +13,24 @@ import {
   Main,
 } from "./styles"
 import hamburger from "assets/icons/hamburger.svg"
-import { categories } from "mocks/categories"
+// import { categories } from "mocks/categories"
 import Category from "components/Category"
-import { products } from "mocks/products"
+// import { products } from "mocks/products"
 import Card from "components/Card"
 import Cart from "components/Cart"
 import CartButton from "components/widgets/CartButton"
-function Home() {
+import { add_products } from "actions"
+import Spinner from "components/widgets/Spinner"
+function HomeLayout({
+  addedProducts,
+  dispatchProducts,
+  user,
+  setUser,
+  categories = [],
+  fetchingCategories,
+  products = [],
+  fetchingProducts,
+}) {
   const [showCart, setShowCart] = useState(false)
   return (
     <HomeContainer>
@@ -37,19 +48,37 @@ function Home() {
           <Dropdown />
         </ContainerTitle>
         <ContainerCategories>
-          {categories.map((category) => (
-            <Category {...category} key={category.id} />
-          ))}
+          {fetchingCategories ? (
+            <Spinner />
+          ) : (
+            categories.map((category) => (
+              <Category {...category} key={category.id + "t"} />
+            ))
+          )}
         </ContainerCategories>
         <ContainerProducts>
-          {products.map((product) => (
-            <Card {...product} />
-          ))}
+          {fetchingProducts ? (
+            <Spinner />
+          ) : (
+            products.map((product) => {
+              return (
+                <Card
+                  key={product.id + "s"}
+                  {...product}
+                  addProduct={() => dispatchProducts(add_products(product))}
+                />
+              )
+            })
+          )}
         </ContainerProducts>
       </Main>
-      <Cart show={showCart} hide={() => setShowCart(false)} />
+      <Cart
+        show={showCart}
+        hide={() => setShowCart(false)}
+        addedProducts={addedProducts}
+      />
     </HomeContainer>
   )
 }
 
-export default Home
+export default HomeLayout

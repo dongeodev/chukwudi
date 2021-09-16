@@ -10,7 +10,7 @@ function ItemCartDelivery({ image, name }) {
         </Figure>
         <Span>Delivery</Span>
       </Container>
-      <Label>$14.99</Label>
+      <Label>$0</Label>
     </Article>
   )
 }

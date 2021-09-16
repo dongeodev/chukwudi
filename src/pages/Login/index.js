@@ -1,13 +1,15 @@
 import LoginForm from "components/Login"
-import React, { useEffect, useState } from "react"
+import React, { useContext, useEffect } from "react"
 import {
   loginWithGitHub,
   loginWithGoogle,
   onAuthStateChanged,
 } from "../../firebase/client"
 import { useHistory } from "react-router-dom"
+import DataContext from "context/DataContext"
 function Login() {
-  const [user, setUser] = useState(null)
+  const { addedProducts, dispatchProducts, user, setUser } =
+    useContext(DataContext)
   const handleGithubLogin = () => {
     loginWithGitHub()
       .then((user) => {
@@ -29,7 +31,7 @@ function Login() {
   let history = useHistory()
   useEffect(() => {
     onAuthStateChanged(setUser)
-  }, [])
+  }, [setUser])
   useEffect(() => {
     user && history.replace("/")
   }, [user])

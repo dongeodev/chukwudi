@@ -1,7 +1,8 @@
-import React from "react"
+import React, { useState } from "react"
 import star from "assets/icons/star.svg"
 import {
   Article,
+  Button,
   ContainerDescription,
   ContainerImage,
   Info,
@@ -15,9 +16,20 @@ function Card({
   price,
   image = "https://images.pexels.com/photos/461198/pexels-photo-461198.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=226&w=440",
   id,
+  addProduct,
 }) {
+  const [isHover, setIsHover] = useState(false)
+  const [disabled, setDisabled] = useState(false)
+  const handleAdd = () => {
+    setDisabled(true)
+    addProduct()
+  }
+
   return (
-    <Article>
+    <Article
+      onMouseEnter={() => setIsHover(true)}
+      onMouseLeave={() => setIsHover(false)}
+    >
       <ContainerImage url={image}>
         <Time>{time}</Time>
       </ContainerImage>
@@ -31,6 +43,16 @@ function Card({
           <Span>Bagels</Span>
           <Span>{price}$</Span>
         </Info>
+        {isHover && (
+          <Button
+            width="fit-content"
+            height="fit-content"
+            onClick={handleAdd}
+            disabled={disabled}
+          >
+            {disabled ? "Added" : "Add to cart"}
+          </Button>
+        )}
       </ContainerDescription>
     </Article>
   )

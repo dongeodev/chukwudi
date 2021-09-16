@@ -56,6 +56,7 @@ export const ContainerTitle = styled.div`
   }
 `
 export const ContainerCategories = styled.section`
+  position: relative;
   display: grid;
   grid-template-rows: auto;
   grid-auto-flow: column;
@@ -64,6 +65,7 @@ export const ContainerCategories = styled.section`
   overflow-x: auto;
   margin-bottom: ${spacing.xlarge};
   padding-bottom: ${spacing.medium};
+  min-height: 100px;
   @media (max-width: ${breakpoints["tablet-medium"]}px) {
     /* grid-template-rows: 1fr;
     grid-auto-columns: auto;
@@ -71,6 +73,8 @@ export const ContainerCategories = styled.section`
   }
 `
 export const ContainerProducts = styled.section`
+  position: relative;
+  min-height: 100px;
   display: flex;
   flex-wrap: wrap;
   /* max-width: 100%; */
