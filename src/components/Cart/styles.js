@@ -62,7 +62,7 @@ export const H2 = styled.h2`
 export const ProductsContainer = styled.div`
   margin-top: 60px;
   padding-right: 24px;
-  min-height: 250px;
+  min-height: 200px;
   & article {
     margin-bottom: ${spacing.large};
   }
