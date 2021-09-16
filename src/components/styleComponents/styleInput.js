@@ -2,7 +2,7 @@ import styled from "styled-components"
 import { colors, spacing } from "styles"
 
 export const InputStyles = styled.input`
-  max-width: ${(props) => props.width || "736px"};
+  max-width: ${(props) => props.width || "100%"};
   width: 100%;
   height: 42px;
   border-radius: ${spacing.medium};

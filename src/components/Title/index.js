@@ -1,11 +1,11 @@
 import React from "react"
-import hamburger from "assets/icons/hamburger.svg"
+
 import { Container, H2 } from "./styles"
-function Title({ title }) {
+function Title({ title, icon }) {
   return (
     <Container>
       <H2>{title}</H2>
-      <img src={hamburger} alt="hamburger" width="30px" height="30px" />
+      <img src={icon} alt={title} width="30px" height="30px" />
     </Container>
   )
 }

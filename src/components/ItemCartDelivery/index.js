@@ -1,5 +1,5 @@
 import React from "react"
-import { Article, Container, Figure, Input, Label, Span } from "./styles"
+import { Article, Container, Figure, Label, Span } from "./styles"
 import truck from "assets/icons/truck.svg"
 function ItemCartDelivery({ image, name }) {
   return (

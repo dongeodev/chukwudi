@@ -9,8 +9,8 @@ export const Select = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 48px;
-  width: 230px;
+  height: 40px;
+  width: 220px;
   padding: ${spacing.medium};
   border-radius: 24px;
   background-color: ${colors.accent};

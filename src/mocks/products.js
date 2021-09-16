@@ -51,7 +51,7 @@ export const products = [
     time: "10-15min",
     price: 9.99,
     image:
-      "https://images.pexels.com/photos/1600711/pexels-zphoto-1600711.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=226&w=440",
+      "https://images.pexels.com/photos/156114/pexels-photo-156114.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=226&w=440",
   },
   {
     id: 7,
