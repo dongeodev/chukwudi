@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useEffect, useState } from "react"
 import menu from "assets/icons/menu.svg"
 import InputSearch from "components/widgets/InputSearch"
 import Header from "components/Header"
@@ -32,6 +32,15 @@ function HomeLayout({
   fetchingProducts,
 }) {
   const [showCart, setShowCart] = useState(false)
+  const [productList, setProductList] = useState(products)
+  const [categorySelected, setCategorySelected] = useState(1)
+  useEffect(() => {
+    setProductList(products)
+    if (categorySelected !== 1) {
+      setProductList(products.filter((item) => item.id === categorySelected))
+    }
+  }, [categorySelected, products])
+
   return (
     <HomeContainer>
       <Main>
@@ -52,7 +61,12 @@ function HomeLayout({
             <Spinner />
           ) : (
             categories.map((category) => (
-              <Category {...category} key={category.id + "t"} />
+              <Category
+                {...category}
+                key={category.id + "t"}
+                onClick={() => setCategorySelected(category.id)}
+                selected={categorySelected}
+              />
             ))
           )}
         </ContainerCategories>
@@ -60,7 +74,7 @@ function HomeLayout({
           {fetchingProducts ? (
             <Spinner />
           ) : (
-            products.map((product) => {
+            productList.map((product) => {
               return (
                 <Card
                   key={product.id + "s"}

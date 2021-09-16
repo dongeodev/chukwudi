@@ -27,6 +27,11 @@ export const Input = styled.input`
     outline: none;
     border: none;
   }
+  &[type="number"]::-webkit-inner-spin-button,
+  &[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
 `
 export const Span = styled.span`
   max-width: 95px;
